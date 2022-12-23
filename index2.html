@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <section class="main">
+            <h1>NO,1234   ユーザー名</h1>
+            <div class="archive">
+                <div>
+                    <form>
+                        <input type="file" accept='image/*' onchange="previewImage(this);">
+                    </form>
+                    <p>
+                    Preview:<br>
+                    <img id="preview2" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:400px;">
+                    </p>
+                    <script>
+                    function previewImage(obj)
+                    {
+                        var fileReader = new FileReader();
+                        fileReader.onload = (function() {
+                            document.getElementById('preview2').src = fileReader.result;
+                        });
+                        fileReader.readAsDataURL(obj.files[0]);
+                    }
+                    </script>
+                </div>
+                <div>
+                    <form action="//www-creators.com/rsc/receiver.php" method="post">
+                        <h1><label>送信内容</label></h1><br>
+                        <textarea name="message-body" placeholder="送信内容"></textarea>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <label>
+        <center><span>送信</span></center>
+        <input type="checkbox" name="checkbox">
+      <div id="popup">
+        <h1>本当に送信してよろしいですか？</h1>
+        <button type="button"><h2>はい</h2></button>
+        <button type="button"><h2>いいえ</h2></button><br> 
+      </div>
+    </label>
+    <style>
+        /* 2カラムサイトにする */
+        .wrapper {
+            width: 80%;
+            display: flex;
+            margin: 50px auto;
+            justify-content: center;
+        }
+
+        .main, .side {
+            padding: 20px;
+        }
+
+
+        /* 2カラムコンテンツにする */
+
+        .archive {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        textarea{
+        width:200%;
+        height:100px;
+        resize:vertical;
+        }
+
+        .archive img {
+        display: block;
+        margin-bottom: 3rem;
+        width: 100%;
+        height: auto;
+        }
+            /*popup表示させたいコンテンツのレイアウトと位置*/
+#popup{
+justify-content: center;
+  width:50%;
+  line-height:200px;
+  background:rgb(255, 236, 225);
+  padding:0 4%;
+  box-sizing:border-box;
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+img{
+  width:100%;
+}
+label{
+  display:block;
+}
+/*ボタンの装飾*/
+label span{
+  display:block;
+  background-color:#01b6ed;
+  color:#fff;
+  width:200px;
+  line-height:40px;
+  border-radius:4px;
+  text-align:center;
+}
+label span:hover{
+  cursor:pointer;
+}
+input[type="checkbox"]{
+  display:none;
+}
+/*checkboxがチェックの状態になったらpopupを表示させる*/
+input[type="checkbox"]:checked + #popup{
+  display:block;
+}
+
+    </style>
+</body>
+</html>

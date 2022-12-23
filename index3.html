@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <section class="main">
+            <h1>メインコンテンツ</h1>
+            <div class="archive">
+                <div>
+                    <img src="no-image.gif" alt="no-img">
+                    <p>見出しや文章</p>
+                </div>
+                <div>
+                    <img src="no-image.gif" alt="no-img">
+                    <p>見出しや文章</p>
+                </div>
+                <div>
+                    <img src="no-image.gif" alt="no-img">
+                    <p>見出しや文章</p>
+                </div>
+                <div>
+                    <img src="no-image.gif" alt="no-img">
+                    <p>見出しや文章</p>
+                </div>
+            </div>
+        </section>
+        <section class="side">
+            <h2>サイドコンテンツ</h2>　
+            <p>サイドコンテンツの内容</p>
+            <h2>サイドリスト</h2>
+            <ul>
+                <li>メニュー</li>
+                <li>メニュー</li>
+                <li>メニュー</li>
+                <li>メニュー</li>
+            </ul>
+        </section>
+    </div>
+    <style>
+        /* 2カラムサイトにする */
+.wrapper {
+    width: 80%;
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.main, .side {
+    padding: 20px;
+}
+
+.main {
+    background: pink;
+    width: 60%;
+    margin-right: 20px;
+}
+
+.side {
+    background: skyblue;
+    width: 20%;
+}
+
+.side p, ul {
+    background-color: #f0f0f0;
+    padding: 30px;
+}
+
+/* 2カラムコンテンツにする */
+
+.archive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.archive div {
+    margin-bottom: 3rem;
+    padding: 3rem;
+    width: 35%;
+    background-color: #f0f0f0;
+}
+
+.archive img {
+    display: block;
+    margin-bottom: 3rem;
+    width: 100%;
+    height: auto;
+}
+    </style>
+</body>
+</html>
